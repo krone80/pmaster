@@ -6,6 +6,7 @@ $(function(){
 		var passLength = 40;
 		var value = null;
 		//社員IDの入力チェック
+		value = $('input[name="staffId"]').val();
 		if(value != null && value != "") {
 			if(value.length > idLength) {
 				errMsg += "社員IDは" + idLength + "文字までで入力してください\n";
@@ -16,8 +17,9 @@ $(function(){
 			i++;
 		}
 		//パスワードの入力チェック
+		value = $('input[name="password"]').val();
 		if(value != null && value != "") {
-			if(value.length > idLength) {
+			if(value.length > passLength) {
 				errMsg += "パスワードは" + passLength + "文字までで入力してください\n";
 				i++;
 			}

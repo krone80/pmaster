@@ -1,0 +1,370 @@
+2018-12-16 03:15:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE DATABASE[*] PRODUCT "; 期待されるステートメント "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, SYNONYM, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE DATABASE[*] PRODUCT "; expected "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, SYNONYM, PRIMARY, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE product [42001-197]
+2018-12-16 03:15:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: スキーマ "PRODUCT" が見つかりません
+Schema "PRODUCT" not found; SQL statement:
+USE product [90079-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.Database.getSchema(Database.java:1808)
+	at org.h2.command.dml.Set.update(Set.java:409)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1022)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1009)
+	at org.h2.server.web.WebThread.process(WebThread.java:165)
+	at org.h2.server.web.WebThread.run(WebThread.java:90)
+	at java.lang.Thread.run(Thread.java:748)
+2018-12-16 03:15:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE ""M_PRODUCT"" (
+  ""PRODUCT_ID"" VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+,  ""PRODUCT_NAME"" VARCHAR(50) COMMENT '商品名'
+,  ""PRODUCT_VAL"" BIGINT COMMENT '商品価格'
+,  ""CREATED_ID"" VARCHAR(10) COMMENT '作成者ID'
+,  ""CREATED_AT"" DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  ""UPDATED_ID"" VARCHAR(10) COMMENT '更新者ID'
+,  ""UPDATED_AT"" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE ""M_PRODUCT"" (
+  ""PRODUCT_ID"" VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+,  ""PRODUCT_NAME"" VARCHAR(50) COMMENT '商品名'
+,  ""PRODUCT_VAL"" BIGINT COMMENT '商品価格'
+,  ""CREATED_ID"" VARCHAR(10) COMMENT '作成者ID'
+,  ""CREATED_AT"" DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  ""UPDATED_ID"" VARCHAR(10) COMMENT '更新者ID'
+,  ""UPDATED_AT"" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `m_product` (
+  `product_id` varchar(8) PRIMARY KEY COMMENT '商品ID'
+,  `product_name` VARCHAR(50) COMMENT '商品名'
+,  `product_val` BIGINT COMMENT '商品価格'
+,  `created_id` VARCHAR(10) COMMENT '作成者ID'
+,  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  `updated_id` VARCHAR(10) COMMENT '更新者ID'
+,  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) [42001-197]
+2018-12-16 03:15:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "M_PRODUCT" が見つかりません
+Table "M_PRODUCT" not found; SQL statement:
+insert into m_product (product_id,product_name,product_val)
+  values ('A001','test1',1000) [42102-197]
+2018-12-16 03:15:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: スキーマ "PRODUCT" が見つかりません
+Schema "PRODUCT" not found; SQL statement:
+USE product [90079-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.engine.Database.getSchema(Database.java:1808)
+	at org.h2.command.dml.Set.update(Set.java:409)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1077)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1386)
+	at org.h2.server.web.WebApp.query(WebApp.java:1060)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1022)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1009)
+	at org.h2.server.web.WebThread.process(WebThread.java:165)
+	at org.h2.server.web.WebThread.run(WebThread.java:90)
+	at java.lang.Thread.run(Thread.java:748)
+2018-12-16 03:15:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE ""M_PRODUCT"" (
+  ""PRODUCT_ID"" VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+,  ""PRODUCT_NAME"" VARCHAR(50) COMMENT '商品名'
+,  ""PRODUCT_VAL"" BIGINT COMMENT '商品価格'
+,  ""CREATED_ID"" VARCHAR(10) COMMENT '作成者ID'
+,  ""CREATED_AT"" DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  ""UPDATED_ID"" VARCHAR(10) COMMENT '更新者ID'
+,  ""UPDATED_AT"" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE ""M_PRODUCT"" (
+  ""PRODUCT_ID"" VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+,  ""PRODUCT_NAME"" VARCHAR(50) COMMENT '商品名'
+,  ""PRODUCT_VAL"" BIGINT COMMENT '商品価格'
+,  ""CREATED_ID"" VARCHAR(10) COMMENT '作成者ID'
+,  ""CREATED_AT"" DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  ""UPDATED_ID"" VARCHAR(10) COMMENT '更新者ID'
+,  ""UPDATED_AT"" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `m_product` (
+  `product_id` varchar(8) PRIMARY KEY COMMENT '商品ID'
+,  `product_name` VARCHAR(50) COMMENT '商品名'
+,  `product_val` BIGINT COMMENT '商品価格'
+,  `created_id` VARCHAR(10) COMMENT '作成者ID'
+,  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  `updated_id` VARCHAR(10) COMMENT '更新者ID'
+,  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) [42001-197]
+2018-12-16 03:15:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "M_PRODUCT" が見つかりません
+Table "M_PRODUCT" not found; SQL statement:
+insert into m_product (product_id,product_name,product_val)
+  values ('A001','test1',1000) [42102-197]
+2018-12-16 03:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE ""M_PRODUCT"" (
+  ""PRODUCT_ID"" VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+,  ""PRODUCT_NAME"" VARCHAR(50) COMMENT '商品名'
+,  ""PRODUCT_VAL"" BIGINT COMMENT '商品価格'
+,  ""CREATED_ID"" VARCHAR(10) COMMENT '作成者ID'
+,  ""CREATED_AT"" DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  ""UPDATED_ID"" VARCHAR(10) COMMENT '更新者ID'
+,  ""UPDATED_AT"" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE ""M_PRODUCT"" (
+  ""PRODUCT_ID"" VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+,  ""PRODUCT_NAME"" VARCHAR(50) COMMENT '商品名'
+,  ""PRODUCT_VAL"" BIGINT COMMENT '商品価格'
+,  ""CREATED_ID"" VARCHAR(10) COMMENT '作成者ID'
+,  ""CREATED_AT"" DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  ""UPDATED_ID"" VARCHAR(10) COMMENT '更新者ID'
+,  ""UPDATED_AT"" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `m_product` (
+  `product_id` varchar(8) PRIMARY KEY COMMENT '商品ID'
+,  `product_name` VARCHAR(50) COMMENT '商品名'
+,  `product_val` BIGINT COMMENT '商品価格'
+,  `created_id` VARCHAR(10) COMMENT '作成者ID'
+,  `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+,  `updated_id` VARCHAR(10) COMMENT '更新者ID'
+,  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+) [42001-197]
+2018-12-16 03:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "M_PRODUCT" が見つかりません
+Table "M_PRODUCT" not found; SQL statement:
+insert into m_product (product_id,product_name,product_val)
+  values ('A001','test1',1000) [42102-197]
+2018-12-16 03:20:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id varchar(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ,  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) [42001-197]
+2018-12-16 03:20:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "M_PRODUCT" が見つかりません
+Table "M_PRODUCT" not found; SQL statement:
+insert into m_product (product_id,product_name,product_val)
+    values ('A001','test1',1000) [42102-197]
+2018-12-16 03:23:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id varchar(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ,  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) [42001-197]
+2018-12-16 03:38:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP() COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP() COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id varchar(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  created_at DATETIME DEFAULT CURRENT_TIMESTAMP() COMMENT '作成日時'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ,  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) [42001-197]
+2018-12-16 03:54:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id varchar(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ,  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) [42001-197]
+2018-12-16 03:56:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id varchar(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ,  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) [42001-197]
+2018-12-16 03:58:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id varchar(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '作成日時'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ,  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新日時'
+  ) [42001-197]
+2018-12-16 03:59:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP() COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  CREATED_AT TIMESTAMP DEFAULT CURRENT_TIMESTAMP() COMMENT '作成日時'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ,  UPDATED_AT TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id VARCHAR(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP() COMMENT '作成日時'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ,  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP() COMMENT '更新日時'
+  ) [42001-197]
+2018-12-16 04:00:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ) "; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE M_PRODUCT (
+    PRODUCT_ID VARCHAR(8) PRIMARY KEY COMMENT[*] '商品ID'
+  ,  PRODUCT_NAME VARCHAR(50) COMMENT '商品名'
+  ,  PRODUCT_VAL BIGINT COMMENT '商品価格'
+  ,  CREATED_ID VARCHAR(10) COMMENT '作成者ID'
+  ,  UPDATED_ID VARCHAR(10) COMMENT '更新者ID'
+  ) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE m_product (
+    product_id VARCHAR(8) PRIMARY KEY COMMENT '商品ID'
+  ,  product_name VARCHAR(50) COMMENT '商品名'
+  ,  product_val BIGINT COMMENT '商品価格'
+  ,  created_id VARCHAR(10) COMMENT '作成者ID'
+  ,  updated_id VARCHAR(10) COMMENT '更新者ID'
+  ) [42001-197]
+2018-12-16 04:29:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT [*]"; 期待されるステートメント "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS, INTERSECTS"
+Syntax error in SQL statement "SELECT [*]"; expected "TOP, LIMIT, DISTINCT, ALL, *, NOT, EXISTS, INTERSECTS"; SQL statement:
+show full columns from m_product [42001-197]
