@@ -12,9 +12,82 @@ import beans.StaffBean;
 
 public class StaffDAO {
 	private final String DRIVER_NAME = "org.h2.Driver";
-	private final String JDBC_URL = "jdbc:h2:file./staff;MODE=MYSQL;IFEXISTS=TRUE;";
+	private final String JDBC_URL = "jdbc:h2:~/db_ProductMasterMaintenance/staff;MODE=MYSQL;";
 	private final String DB_USER = "root";
 	private final String DB_PASS = "root";
+
+	public boolean createTable() {
+		Connection conn = null;
+		try {
+			Class.forName(DRIVER_NAME);
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+
+			String sql ="CREATE TABLE IF NOT EXISTS m_staff ("
+					+ "staff_id varchar(10) PRIMARY KEY"
+					+ ",  staff_name VARCHAR(40)"
+					+ ",  password VARCHAR(40) NOT NULL"
+					+ ",  created_id VARCHAR(10)"
+					+ ",  created_at DATETIME DEFAULT CURRENT_TIMESTAMP"
+					+ ",  updated_id VARCHAR(10)"
+					+ ",  updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+					+ " )";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			int result = pStmt.executeUpdate();
+			if(result != 1) {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return true;
+	}
+
+	public boolean insertTest(){
+		Connection conn = null;
+		try {
+			Class.forName(DRIVER_NAME);
+			conn = DriverManager.getConnection(JDBC_URL, DB_USER, DB_PASS);
+
+			String sql ="INSERT IGNORE INTO m_staff (staff_id,password)"
+					+ "VALUES ('test','test1234')";
+
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			int result = pStmt.executeUpdate();
+			if(result != 1) {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return true;
+	}
+
 
 	public StaffBean selectForLogin(StaffBean staff){
 		Connection conn = null;
