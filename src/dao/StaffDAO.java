@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 
 import beans.StaffBean;
 
@@ -111,9 +110,9 @@ public class StaffDAO {
 				String staffName = rs.getString(2);
 				String password = rs.getString(3);
 				String createdId = rs.getString(4);
-				Date createdAt = rs.getDate(5);
+				String createdAt = rs.getString(5);
 				String updatedId = rs.getString(6);
-				Date updatedAt = rs.getDate(7);
+				String updatedAt = rs.getString(7);
 				loginStaff = new StaffBean(staffId, staffName, password, createdId, createdAt, updatedId, updatedAt);
 			}
 		} catch (SQLException e) {

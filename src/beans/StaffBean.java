@@ -1,16 +1,15 @@
 package beans;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class StaffBean implements Serializable {
 	private String staffId;
 	private String staffName;
 	private String password;
 	private String createdId;
-	private Date createdAt;
+	private String createdAt;
 	private String updatedId;
-	private Date updatedAt;
+	private String updatedAt;
 
 	public StaffBean() {	}
 
@@ -24,8 +23,8 @@ public class StaffBean implements Serializable {
 	 * @param updatedId
 	 * @param updatedAt
 	 */
-	public StaffBean(String staffId, String staffName, String password, String createdId, Date createdAt,
-			String updatedId, Date updatedAt) {
+	public StaffBean(String staffId, String staffName, String password, String createdId, String createdAt,
+			String updatedId, String updatedAt) {
 		this.staffId = staffId;
 		this.staffName = staffName;
 		this.password = password;
@@ -66,7 +65,7 @@ public class StaffBean implements Serializable {
 		return createdId;
 	}
 
-	public Date getCreatedAt() {
+	public String getCreatedAt() {
 		return createdAt;
 	}
 
@@ -74,7 +73,7 @@ public class StaffBean implements Serializable {
 		return updatedId;
 	}
 
-	public Date getUpdatedAt() {
+	public String getUpdatedAt() {
 		return updatedAt;
 	}
 

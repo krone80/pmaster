@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<th>単価</th>
-					<td><input type="number" name="productVal" /></td>
+					<td><input type="number" name="productVal" min="0" step="1"/></td>
 				</tr>
 			</table>
 			<p class="msg">${msg}</p>

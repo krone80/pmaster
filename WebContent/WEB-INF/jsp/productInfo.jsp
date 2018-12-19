@@ -38,7 +38,7 @@
 					</tr>
 					<tr>
 						<th>単価</th>
-						<td><input type="number" name="productVal" value="${product.productVal}" /></td>
+						<td><input type="number" name="productVal" value="${product.productVal}" min="0" step="1"/></td>
 					</tr>
 					<tr>
 						<th>前回登録日時</th>

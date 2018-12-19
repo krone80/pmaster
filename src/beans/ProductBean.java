@@ -1,16 +1,15 @@
 package beans;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class ProductBean implements Serializable {
 	private String productId;
 	private String productName;
 	private String productVal;
 	private String createdId;
-	private Date createdAt;
+	private String createdAt;
 	private String updatedId;
-	private Date updatedAt;
+	private String updatedAt;
 
 	public ProductBean() {	}
 
@@ -23,8 +22,8 @@ public class ProductBean implements Serializable {
 	 * @param updatedId
 	 * @param updatedAt
 	 */
-	public ProductBean(String productId, String productName, String productVal, String createdId, Date createdAt,
-			String updatedId, Date updatedAt) {
+	public ProductBean(String productId, String productName, String productVal, String createdId, String createdAt,
+			String updatedId, String updatedAt) {
 		this.productId = productId;
 		this.productName = productName;
 		this.productVal = productVal;
@@ -98,7 +97,7 @@ public class ProductBean implements Serializable {
 		return createdId;
 	}
 
-	public Date getCreatedAt() {
+	public String getCreatedAt() {
 		return createdAt;
 	}
 
@@ -106,7 +105,7 @@ public class ProductBean implements Serializable {
 		return updatedId;
 	}
 
-	public Date getUpdatedAt() {
+	public String getUpdatedAt() {
 		return updatedAt;
 	}
 
