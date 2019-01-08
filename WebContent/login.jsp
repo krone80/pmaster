@@ -34,7 +34,7 @@
 			<p class="msg">${msg}</p>
 			<input type="submit" value="ログイン" class="btn_1"/>
 		</form>
-		]  -->
+		  -->
         <s:form action="login">
 			<table>
 				<tr>
