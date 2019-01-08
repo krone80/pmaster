@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -16,12 +17,16 @@
 		<h3 class="label_text">メニュー</h3>
 	</div>
 	<div class="contents">
-		<p><input type="button" value="検索・更新" onClick="document.location='/ProductMasterMaintenance/Search'"  class="btn_2" /></p>
-		<p><input type="button" value="新規登録" onClick="document.location='/ProductMasterMaintenance/Register'"  class="btn_2" /></p>
-<!--		<a href="/ProductMasterMaintenance/Search" class="btn_a1">検索・更新</a>
-		<a href="/ProductMasterMaintenance/Register" class="btn_a1">新規登録</a> -->
-		<input type="button" value="終了" onClick="document.location='/ProductMasterMaintenance/'" class="btn_1" />
-	</div>
+		<s:form  action="toSearch" theme="simple">
+	 		<p><s:submit  value="検索・更新" action="toSearch" class="btn_2" /></p>
+	  	</s:form>
+		<s:form  action="toRegister" theme="simple">
+	 		<p><s:submit  value="新規登録" action="toRegister" class="btn_2" /></p>
+	  	</s:form>
+		<s:form  action="toLogin" theme="simple">
+	 		<p><s:submit  value="終了" action="toLogin" class="btn_1" /></p>
+	  	</s:form>
+  	</div>
 </div>
 </body>
 </html>

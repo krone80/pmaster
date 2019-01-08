@@ -19,35 +19,19 @@
 		<h3 class="label_text">ログイン</h3>
 	</div>
 	<div class="contents">
-		<!--
-		<form action="/ProductMasterMaintenance/Login" method="post">
+        <s:form action="login" theme="simple">
 			<table>
 				<tr>
 					<th>社員ID</th>
-					<td><input type="text" name="staffId" /></td>
+					<td><s:textfield key="staffId" /></td>
 				</tr>
 				<tr>
 					<th>パスワード</th>
-					<td><input type="password" name="password" /></td>
+					<td><s:password key="password" /></td>
 				</tr>
 			</table>
-			<p class="msg">${msg}</p>
-			<input type="submit" value="ログイン" class="btn_1"/>
-		</form>
-		  -->
-        <s:form action="login">
-			<table>
-				<tr>
-					<th>社員ID</th>
-					<td><s:textfield name="id" /></td>
-				</tr>
-				<tr>
-					<th>パスワード</th>
-					<td><s:textfield name="password" /></td>
-				</tr>
-			</table>
-			<p class="msg">${msg}</p>
-			<s:submit  value="ログイン" class="btn_1" />
+			<p><s:property value="msg" /></p>
+			<s:submit  value="ログイン" action="login" class="btn_1" />
 		</s:form>
 	</div>
 </div>
