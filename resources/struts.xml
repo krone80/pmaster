@@ -22,6 +22,21 @@
         	<result name="success">login.jsp</result>
     	</action>
 
+       	<action name="toMenu" class="action.MenuAction" method="toMenu">
+        	<result name="success">menu.jsp</result>
+    	</action>
 
-    </package>
+   		<action name="register" class="action.ProductAction" method="register">
+        	<result name="success">register.jsp</result>
+ 	   </action>
+
+  		<action name="search" class="action.ProductAction" method="search">
+        	<result name="success">productInfo.jsp</result>
+ 	   </action>
+
+  		<action name="update" class="action.ProductAction" method="update">
+        	<result name="success">productInfo.jsp</result>
+ 	   </action>
+
+	</package>
 </struts>

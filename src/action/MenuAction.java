@@ -18,4 +18,8 @@ public class MenuAction extends ActionSupport  {
 		System.out.println("toLogin");
 		return "success";
 	}
+	public String toMenu()  throws Exception{
+		System.out.println("toMenu");
+		return "success";
+	}
 }
