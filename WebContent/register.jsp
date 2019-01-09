@@ -37,9 +37,7 @@
 			</table>
 			<p><s:property value="msg" /></p>
 			<s:submit  value="新規登録" class="btn_1" />
-		</s:form>
-		<s:form action="toMenu" theme="simple" >
-			<s:submit  value="戻る" class="btn_1" />
+			<input type="button" value="戻る" onClick="location.href='<s:url action="toMenu" /> ' "  class="btn_1">
 		</s:form>
 	</div>
 </div>

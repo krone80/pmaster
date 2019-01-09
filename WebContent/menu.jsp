@@ -13,7 +13,6 @@
     function actionToRegister(){
         document.getElementById('form').action="toRegister";
     }
-
     function actionToLogin(){
         document.getElementById('form').action="toLogin";
     }

@@ -58,8 +58,7 @@
 				</table>
 				<p class="msg"><s:property value="msg" /></p>
 				<s:submit  value="更新" class="btn_1" onClick="actionUpdate()" />
-				<s:submit  value="戻る" class="btn_1" />
-				<input type="button" href="" >
+				<input type="button" value="戻る" onClick="location.href='<s:url action="toMenu" /> ' "  class="btn_1">
 			</div>
 		</s:form>
 	</div>
