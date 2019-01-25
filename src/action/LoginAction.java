@@ -7,6 +7,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import beans.StaffBean;
+import model.GenerateDataBase;
 import model.LoginLogic;
 
 public class LoginAction extends ActionSupport implements SessionAware {
@@ -26,7 +27,9 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> sessionMap) {this.sessionMap = sessionMap;}
 	public String execute() throws Exception{
 		System.out.println("LoginAction");
-
+		//dbにテストデータを生成
+		GenerateDataBase gdb = new GenerateDataBase();
+		gdb.execute();
 		//入力値(staffId,password)をリクエストパラメーターから取得，staffにセット
 		StaffBean staff = new StaffBean(staffId,password);
 		//staffとID,passが一致するデータを取得loginStaffにセット

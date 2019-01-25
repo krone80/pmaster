@@ -4,11 +4,6 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
     id="WebApp_ID" version="3.1">
     <display-name>Struts2</display-name>
-    <welcome-file-list>
-        <!-- アプリケーションルートであクセした時の表示ファイル設定 -->
-        <!-- 必要はありませんが、今回はURLの入力間違いも防ぐため、index.jspのみとします。 -->
-        <welcome-file>login.jsp</welcome-file>
-    </welcome-file-list>
 
     <!-- Struts2のサーブレットフィルタ -->
     <filter>
@@ -21,4 +16,11 @@
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    
+    <welcome-file-list>
+        <!-- アプリケーションルートであクセした時の表示ファイル設定 -->
+        <!-- 必要はありませんが、今回はURLの入力間違いも防ぐため、index.jspのみとします。 -->
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+    
 </web-app>
