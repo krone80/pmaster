@@ -35,6 +35,10 @@ public class Menu extends HttpServlet {
 				path = "/WEB-INF/jsp/productInfo.jsp";
 				break;
 
+			case "toPrint":
+				path = "/WEB-INF/jsp/print.jsp";
+				break;
+
 			default:
 				path = "/WEB-INF/jsp/menu.jsp";
 				break;
